@@ -1,0 +1,15 @@
+{% extends "testapp/base.html" %}
+{% load static %}
+{% block start %}
+<center>
+<div class="jumbotron">
+    <div class="container"><br><br><br><br>
+        <h2> Thanks For Using Raju Movies </h2><br>
+        <h2> Anyway Thanks for Watching Movies You Can Free Time Watch Again Movies< , you Have to Use at least 24-hrs Per day......</h2><br><br>
+        <h2 class="text-center"> Please Login Again To Enjoy......... </h2><br><br>
+        <a href="{% url 'login' %}"  class="btn btn-success",id="log">Login</a>
+    </div>
+
+</div>
+</center>
+{% endblock %}

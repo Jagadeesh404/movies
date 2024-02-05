@@ -1,0 +1,10 @@
+.ticket-button{
+height:30px;
+width:120px;
+border-width:0px;
+border-radius:8px;
+background-color:red;
+}
+.ticket-button:hover{
+background-color:lightblue;
+}

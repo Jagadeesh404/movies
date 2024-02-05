@@ -1,0 +1,34 @@
+{% extends "testapp/base.html" %}
+{% load static %}
+{% block start %}
+<style>
+	.bold{
+		margin-left: 57px;
+	}
+	.middle{
+		margin-left: 26%;
+	}
+</style>
+<div class="shadow-pop">
+<div class="container mt-5 pt-3" >
+	<div class="row" style="color:blue;">
+		{% for movie in movies %}
+	<div class="col-md-3 pt-3">
+		<div class="p-3 mb-2 bg-secondary text-white" style="width: 18rem; border-radius: 40px;">
+			<img src="{{movie.images}}" style="height: 240px; width:255px; border-radius: 30px; middle" alt="Veg Pizza Image" class="border border-success">
+			<div class="card-body">
+				<h5 class="card-title text-center text-uppercase"> <strong style="font-size: 24px; color:#3c4852">{{movie.movie_name}}</strong></h5>
+				<p class="bold" style="font-size: 18px; color:#3c4852"> <b >Ticket Price -</b> ₹ {{movie.price}} <br> <strong>Session</strong> - {{movie.category.category_name}}</p>
+				<a  href="{% url 'cart' %}" class="btn btn-outline-dark middle" >
+					 Book Now </a>
+				</div>
+		</div>
+		<br>
+	</div>
+	<br>
+	{% endfor %}
+</div>
+</div>
+	</div>
+
+{% endblock %}

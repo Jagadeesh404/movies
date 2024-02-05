@@ -1,0 +1,39 @@
+{% extends "testapp/base.html" %}
+{% load static %}
+{% block start %}
+<style>
+	table ,th ,td{
+	border:2px solid black;
+	border-collapse: collapse;
+	}
+</style>
+<div style="background-color: #bc8f8f ">
+<div class="p-3 mb-2 bg-secondary text-white">
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">S.No.</th>
+                <th scope="col">Cancel Ticket</th>
+                <th scope="col">Book </th>
+				<th scope="col">Movie Name</th>
+				<th scope="col">Watch</th>
+            </tr>
+		</thead>
+		<tbody>
+			{% for cartItems in carts.cart_items.all %}
+			<tr>
+				<th scope="row">{{forloop.counter}}</th>
+				<td><a href="{% url 'remove_cart' cartItems.uid %}" class="btn btn-outline-dark">Cancel Ticket</a>
+				</td>
+				<td><img src="https://th.bing.com/th?id=OIP.OGsxArI7z6_zK9JA49NXaAHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" style="height: 100px; width:100px;"></td>
+				<td>
+					<h5>{{cartItems.movie.movie_name}}</h5>
+				</td>
+				<td><a href="/confirm_cart_item" class="btn btn-outline-dark"> Pay Now</a>
+            </tr>
+			{% endfor %}
+        </tbody>
+	</table>
+</div>
+</div>
+{% endblock %}
